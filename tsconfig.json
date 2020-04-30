@@ -15,7 +15,12 @@
       "moduleResolution": "node",
   
       // Don't emit; allow Babel to transform files.
-      "noEmit": true,
+    "noEmit": true,
+
+      // Emit __importStar and __importDefault helpers for runtime babel ecosystem compatibility and enable --allowSyntheticDefaultImports for typesystem compatibility.
+      // Is needed to prevent an error on default React import
+    "esModuleInterop": true,
+
     "allowJs": true,
     "resolveJsonModule": true,
     "isolatedModules": true,

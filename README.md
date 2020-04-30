@@ -8,6 +8,7 @@
 ### Packages
 
 `npm install webpack webpack-cli html-webpack-plugin --save-dev`
+`npm install webpack-dev-server --save-dev`
 
     Webpack is a module bundler for JavaScript that can produce 
 cross browser–compatible code at no expense when it comes to developer experience.
@@ -46,6 +47,7 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
   },
 
+  <!-- https://survivejs.com/webpack/building/source-maps/ -->
   devtool: "source-map",
 
   module: {
