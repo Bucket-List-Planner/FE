@@ -1,0 +1,21 @@
+{
+    "presets": [
+      "@babel/react",
+      "@babel/typescript",
+      [
+        "@babel/env",
+        {
+            "modules": false,
+            // transpile to a minimum version of IE 11 and Chrome 58 
+            "targets": {
+            "chrome": "58",
+            "ie": "11"
+            }
+        }
+      ]
+    ],
+    "plugins": [
+          "@babel/proposal-class-properties",
+          "@babel/proposal-object-rest-spread"
+      ]
+  }
