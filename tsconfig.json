@@ -1,35 +1,35 @@
 {
     "compilerOptions": {
-      "target": "es5",
-      "module": "esnext",
-       "lib": [
+        "target": "es5",
+        "module": "esnext",
+        "lib": [
         "dom",
         "dom.iterable",
         "esnext"
-      ],
-  
-      // false is default; setting strict to true is really important, false can be considered when you are moving from JS to TS
-      "strict": true, 
-  
-      // Search under node_modules for non-relative imports.
-      "moduleResolution": "node",
-  
-      // Don't emit; allow Babel to transform files.
-    "noEmit": true,
+        ],
 
-      // Emit __importStar and __importDefault helpers for runtime babel ecosystem compatibility and enable --allowSyntheticDefaultImports for typesystem compatibility.
-      // Is needed to prevent an error on default React import
-    "esModuleInterop": true,
+        // false is default; setting strict to true is really important, false can be considered when you are moving from JS to TS
+        "strict": true, 
 
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "removeComments": true,
-    "noImplicitAny": true,
-    "jsx": "react", // support for react
+        // Search under node_modules for non-relative imports.
+        "moduleResolution": "node",
+
+        // Don't emit; allow Babel to transform files.
+        "noEmit": true,
+
+        // Emit __importStar and __importDefault helpers for runtime babel ecosystem compatibility and enable --allowSyntheticDefaultImports for typesystem compatibility.
+        // Is needed to prevent an error on default React import
+        "esModuleInterop": true,
+
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "removeComments": true,
+        "jsx": "react", // support for react
     },
+
     "include": [
-      "src"
+        "src"
     ]
-  }
+}
   
