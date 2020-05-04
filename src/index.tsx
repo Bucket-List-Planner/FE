@@ -7,6 +7,8 @@ import GlobalStyles from './globalStyles'
 
 
 const theme = {
+    primary: '#FF6559',
+    secondary: '#FFF963',
     colors: {
         powderWhite: "#FFFDF9",
     },

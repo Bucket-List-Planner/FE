@@ -1,22 +1,19 @@
 import React, { FunctionComponent } from 'react'
 // styles
 import styled from 'styled-components'
-import { responsiveFont } from '../../globalStyles'
 // components
 import Map from './Map'
-
+import Typography from '../Typography/Typography'
 
 const Main = styled.div`
-    display: grid;
     min-width: 280px;
+    display: grid;
     grid-template-columns: 1fr 1fr 8fr 2fr;
     grid-template-rows: 3fr 1fr 3fr; 
     margin: 20px 10px 0 10px;
     h1{
-        transform: rotate(180deg);
         justify-self: start;
         align-self: center;
-        writing-mode: vertical-lr;
         text-transform: uppercase;
         letter-spacing: 0.4vh;
         padding: 30px 0 0 0;
@@ -29,6 +26,7 @@ const Main = styled.div`
         grid-row: 2;
         grid-column: 2 / 4;
         align-self: center;
+        justify-self: start;
         z-index: 1;
     }
     .map{
@@ -43,13 +41,27 @@ const Main = styled.div`
     }
 `
 
-const Title = styled.h1`${responsiveFont(24, 84)}`
-
-const Home:FunctionComponent = () => {
+const Hero:FunctionComponent = () => {
+    let fontSize = {min: 24, max: 84}
     return(
         <Main>
-            <Title>Bucket List</Title>
-            <p>Plan your life, make it possible, make your goals real</p>
+
+            <Typography 
+                data-cy={"primary"}
+                size={fontSize} 
+                vertical 
+                rotate={180}
+            >
+                Bucket List
+            </Typography>
+
+            <Typography     
+                variant={'p'} 
+                primary
+            >
+                Plan your life, make it possible, make your goals real
+            </Typography>
+
             <div className="map">
                 <Map />
             </div>
@@ -57,4 +69,4 @@ const Home:FunctionComponent = () => {
     )
 }
 
-export default Home
+export default Hero
