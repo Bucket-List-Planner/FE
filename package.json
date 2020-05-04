@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open",
     "start": "webpack --mode=development",
     "build": "webpack --mode=production",
     "dev-server": "webpack-dev-server"
@@ -32,6 +33,7 @@
     "@types/styled-components": "^5.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "cypress": "^4.5.0",
     "html-webpack-plugin": "^4.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
