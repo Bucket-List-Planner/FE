@@ -48,6 +48,7 @@ const Typography:FunctionComponent<Props> = ({
     primary = false, secondary = false,
     vertical = false,
     rotate=0,
+    ...rest
 }) => {
     let s = {
         xl: {min: 36, max: 48},
@@ -58,7 +59,6 @@ const Typography:FunctionComponent<Props> = ({
     let fontSize:VariantFont = size ? size : xl ? s.xl : lg ? s.lg : md ? s.md : sm ? s.sm : font
 
     return (
-        <>
             <Text 
                 as={variant} 
                 min={fontSize.min} 
@@ -67,10 +67,10 @@ const Typography:FunctionComponent<Props> = ({
                 secondary={secondary}
                 vertical={vertical}
                 rotate={rotate}
+                {...rest}
             >
                 {children}
             </Text>
-        </>
     )
 }
 
