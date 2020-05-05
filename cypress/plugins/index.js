@@ -15,7 +15,20 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+
+const webpack = require('@cypress/webpack-preprocessor')
+const defaults = webpackPreprocessor.defaultOptions
+
+const options = {
+  webpackOptions: require('../../webpack.dev'),
+  watchOptions:{
+    ignored: '/node_modules/',
+  },
+}
+
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  delete defaults.webpackOptions.module.rules[0].use[0].options.presets
+  on('file:preprocessor', webpack(options))
 }

@@ -45,9 +45,8 @@ const Hero:FunctionComponent = () => {
     let fontSize = {min: 24, max: 84}
     return(
         <Main>
-
-            <Typography 
-                data-cy={"primary"}
+            <Typography  
+                data-cy="keyTitle"
                 size={fontSize} 
                 vertical 
                 rotate={180}
@@ -55,7 +54,7 @@ const Hero:FunctionComponent = () => {
                 Bucket List
             </Typography>
 
-            <Typography     
+            <Typography
                 variant={'p'} 
                 primary
             >
