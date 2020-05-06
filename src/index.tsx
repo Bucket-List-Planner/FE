@@ -7,14 +7,15 @@ import GlobalStyles from './globalStyles'
 
 
 const theme = {
-    primary: '#FF6559',
-    secondary: '#FFF963',
+    primary: '#594DFF',
+    secondary: '#54DEFD',
+    contrast: "#EB4963",
     colors: {
         powderWhite: "#FFFDF9",
     },
     breakpoints: {
         minWidth: 280,
-        maxWidth: 1300
+        maxWidth: 1000
     }
 }
 

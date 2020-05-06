@@ -19,8 +19,8 @@ const Main = styled.div`
         padding: 30px 0 0 0;
         grid-row: 1 / 4;
     }
-    p{
-        background: #f0cb0b;
+    & > p{
+        background: #594DFF;
         padding: 5px 5px 5px 10px;
         margin: 0 20px 10px 20px;
         grid-row: 2;
@@ -28,6 +28,17 @@ const Main = styled.div`
         align-self: center;
         justify-self: start;
         z-index: 1;
+    }
+    button{
+        grid-row: 3;
+        grid-column: 2 / 4;
+        align-self: flex-start;
+        justify-content: flex-start;
+        width: 150px;
+        background: ${props => props.theme.contrast};
+        color: white;
+        padding: 5px 5px 5px 10px;
+        margin: 0 20px 10px 20px;
     }
     .map{
         grid-row: 1 / 4;
@@ -56,10 +67,18 @@ const Hero:FunctionComponent = () => {
 
             <Typography
                 variant={'p'} 
-                primary
+                secondary
             >
                 Plan your life, make it possible, make your goals real
             </Typography>
+            <button>
+                <Typography
+                    variant={'p'} 
+                    color="white"
+                >
+                    Learn more
+                </Typography>
+            </button>
 
             <div className="map">
                 <Map />
