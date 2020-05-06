@@ -22,7 +22,7 @@ let font:VariantFont = {min: 12, max: 24}
 
 const Text = styled.h1<TextProps>`
     ${props => responsiveFont(props.min, props.max)}
-    color: ${props => props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : 'black'};
+    color: ${props => props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : props.color};
     writing-mode: ${props => props.vertical ? 'vertical-lr' : 'vertical-hr'};
     transform: ${props => `rotate(${props.rotate}deg)` };
 `
@@ -36,6 +36,7 @@ type Props = {
     xl?: boolean,
     primary?: boolean,
     secondary?: boolean,
+    color?: string,
     vertical?: boolean,
     rotate?: number,
 }
@@ -45,7 +46,7 @@ const Typography:FunctionComponent<Props> = ({
     size,
     children,
     sm = false, md = false, lg = false, xl = false,
-    primary = false, secondary = false,
+    primary = false, secondary = false, color = 'black',
     vertical = false,
     rotate=0,
     ...rest
@@ -65,6 +66,7 @@ const Typography:FunctionComponent<Props> = ({
                 max={fontSize.max}
                 primary={primary}
                 secondary={secondary}
+                color={color}
                 vertical={vertical}
                 rotate={rotate}
                 {...rest}
