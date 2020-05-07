@@ -71,8 +71,8 @@ const Hero:FunctionComponent = () => {
                 Plan your life, make it possible, make your goals real
             </Typography>
 
-            <Button primary>
-                <Typography variant={'p'} color="black">
+            <Button primary outline>
+                <Typography variant={'p'} primary>
                     Learn more
                 </Typography>
             </Button>
