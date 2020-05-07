@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "gsap": "^3.2.6",
+    "polished": "^3.6.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0"
