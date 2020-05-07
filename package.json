@@ -43,6 +43,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "gsap": "^3.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0"

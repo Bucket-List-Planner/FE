@@ -4,6 +4,7 @@ import styled from 'styled-components'
 // components
 import Map from './Map'
 import Typography from '../Typography/Typography'
+import Button from '../Buttons/Button'
 
 const Main = styled.div`
     min-width: 280px;
@@ -35,8 +36,6 @@ const Main = styled.div`
         align-self: flex-start;
         justify-content: flex-start;
         width: 150px;
-        background: ${props => props.theme.contrast};
-        color: white;
         padding: 5px 5px 5px 10px;
         margin: 0 20px 10px 20px;
     }
@@ -71,14 +70,12 @@ const Hero:FunctionComponent = () => {
             >
                 Plan your life, make it possible, make your goals real
             </Typography>
-            <button>
-                <Typography
-                    variant={'p'} 
-                    color="white"
-                >
+
+            <Button primary>
+                <Typography variant={'p'} color="black">
                     Learn more
                 </Typography>
-            </button>
+            </Button>
 
             <div className="map">
                 <Map />
