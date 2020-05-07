@@ -5,8 +5,15 @@ import { lighten } from 'polished'
 
 type Props = {
     bg: string,
+
     primary: boolean,
     secondary: boolean,
+
+    danger: boolean,
+    warning: boolean,
+    success: boolean,
+    info: boolean,
+
     outline: boolean,
 }
 
@@ -58,12 +65,23 @@ class Button extends React.Component<Partial<Props>>{
             bg = this.props.bg || 'white',
             primary = this.props.primary || false,
             secondary = this.props.secondary || false,
-            outline = this.props.outline || false
+            outline = this.props.outline || false,
+
+            danger = this.props.danger || false,
+            warning = this.props.warning || false,
+            success = this.props.success || false,
+            info = this.props.info || false
 
         return(
             <Btn 
+                danger={danger}
+                warning={warning}
+                success={success}
+                info={info}
+
                 primary={primary}
                 secondary={secondary}
+
                 bg={bg}
                 onClick={this.rippleEffect}
                 outline={outline}
@@ -81,12 +99,6 @@ class Button extends React.Component<Partial<Props>>{
 
 export default Button
 
-
-// pass an icon/text
-// choose icon button (circle) vs button (rec)
-// mood for btn with default colors: red, yellow,
-// 
-
 const Btn = styled.button<Props>`
     outline: none;
     border: ${props => props.outline ? `1.5px solid var(--color)` : 'none'};
@@ -97,13 +109,21 @@ const Btn = styled.button<Props>`
 
     &:hover{
         background: ${props => props.primary   ? lighten(0.35, props.theme.primary)  : 
-                               props.secondary ? lighten(0.29, props.theme.secondary): 
+                               props.secondary ? lighten(0.32, props.theme.secondary): 
+                               props.danger    ? lighten(0.32, props.theme.colors.danger)   : 
+                               props.warning   ? lighten(0.41, props.theme.colors.warning)  : 
+                               props.success   ? lighten(0.5, props.theme.colors.success)  : 
+                               props.info      ? lighten(0.45, props.theme.colors.info)     : 
                                props.bg};
     }
 
     #circle1{
         fill: ${props => props.primary   ?  lighten(0.2, props.theme.primary)   : 
                          props.secondary ? lighten(0.15, props.theme.secondary) : 
+                         props.danger    ? lighten(0.2, props.theme.colors.danger)   : 
+                         props.warning   ? lighten(0.2, props.theme.colors.warning)  : 
+                         props.success   ? lighten(0.33, props.theme.colors.success)  : 
+                         props.info      ? lighten(0.2, props.theme.colors.info)     : 
                          props.bg};
     }
 
@@ -121,7 +141,11 @@ const Btn = styled.button<Props>`
         pointer-events: none;
     }
 
-    --color: ${props => props.primary ? props.theme.primary       : 
-                         props.secondary ? props.theme.secondary  : 
-                         props.bg};
+    --color: ${props => props.primary   ? props.theme.primary       : 
+                        props.secondary ? props.theme.secondary     : 
+                        props.danger    ? props.theme.colors.danger : 
+                        props.warning   ? props.theme.colors.warning: 
+                        props.success   ? props.theme.colors.success: 
+                        props.info      ? props.theme.colors.info   : 
+                        props.bg}
 `
