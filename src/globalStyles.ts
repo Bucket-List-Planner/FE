@@ -56,6 +56,7 @@ export default createGlobalStyle`
 export function responsiveFont(min_font: number, max_font: number){
     let min_width = fontSize.min_width
     let max_width = fontSize.max_width
+    
     return ` 
         font-size: ${min_font}px;
 

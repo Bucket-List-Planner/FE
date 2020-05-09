@@ -62,6 +62,9 @@ type Props = {
     warning?: boolean,
     success?: boolean,
     info?: boolean,
+
+    innerRef?: React.RefObject<HTMLHeadingElement | HTMLParagraphElement>
+    className?: string
 }
 
 const Typography:FunctionComponent<Props> = ({
@@ -80,6 +83,9 @@ const Typography:FunctionComponent<Props> = ({
   
     vertical = false,
     rotate=0,
+
+    className,
+    innerRef,
     ...rest
 }) => {
     let s = {
@@ -104,6 +110,8 @@ const Typography:FunctionComponent<Props> = ({
                 color={color}
                 vertical={vertical}
                 rotate={rotate}
+                className={className}
+                ref={innerRef}
                 {...rest}
             >
                 {children}

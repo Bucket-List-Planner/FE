@@ -15,7 +15,7 @@ const theme = {
     contrastDark: '#FFC700',
 
     colors: {
-        danger: '#FC5050',
+        danger: 'coral',
         dangerDark: '#EA1515',
         warning: '#FDCA17',
         warningDark: '#FE9800',

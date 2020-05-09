@@ -17,10 +17,16 @@ type Props = {
     outline: boolean,
 }
 
-class Button extends React.Component<Partial<Props>>{
+type BtnProps = {
+    onClick?: () => void,
+    innerRef?: React.RefObject<HTMLButtonElement>,
+    className?: string,
+}
+
+class Button extends React.Component<Partial<Props> & BtnProps>{
     circle1: SVGCircleElement | null
  
-    constructor(props: Props){
+    constructor(props: Props & BtnProps){
         super(props)
         this.circle1 = null
     }
@@ -58,6 +64,8 @@ class Button extends React.Component<Partial<Props>>{
                 repeat: 0, 
                 delay: 0
             })
+
+        this.props.onClick && this.props.onClick()
     }
 
     render(){
@@ -85,6 +93,9 @@ class Button extends React.Component<Partial<Props>>{
                 bg={bg}
                 onClick={this.rippleEffect}
                 outline={outline}
+
+                className={this.props.className}
+                ref={this.props.innerRef}
             >
                 <div className="svg">
                     <svg id="circles" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +117,6 @@ const Btn = styled.button<Props>`
     cursor: pointer;
     overflow: hidden;
     position: relative;
-
     &:hover{
         background: ${props => props.primary   ? lighten(0.35, props.theme.primary)  : 
                                props.secondary ? lighten(0.32, props.theme.secondary): 
