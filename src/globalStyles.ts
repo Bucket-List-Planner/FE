@@ -38,6 +38,10 @@ export default createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         height: 100%;
     }
+    
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Federo', sans-serif;
+    }
 
     :root { font-size: ${fontSize.min_font}px; }
 
